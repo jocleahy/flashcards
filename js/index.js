@@ -1,6 +1,7 @@
 const ele_front = document.querySelector('.card__front');
 const ele_back = document.querySelector('.card__back');
 
+const btn_all = document.querySelectorAll('nav button');
 const btn_reveal = document.querySelector('.reveal');
 
 
@@ -44,6 +45,11 @@ function getCard() {
 function reveal() {
     ele_front.classList.toggle('show');
     ele_back.classList.toggle('show');
+    toggleBtn();
+}
+
+function toggleBtn() {
+    btn_all.forEach(btn => btn.disabled ? btn.disabled = false : btn.disabled = true);
 }
 
 init();
