@@ -103,5 +103,15 @@ button[disabled]:hover {
 }
 
 .show {
-    opacity: 1;
+    animation: foo 1s ease-in forwards;
+}
+
+@keyframes foo {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
