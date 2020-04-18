@@ -1,0 +1,107 @@
+:root {
+    --font: #2e2e2e;
+    --body: #000;
+    --contain: #f0f8ff;
+    --progress: #778899;
+    --progressInner: #6495ed;
+    --btnBg: #5f9ea0;
+    --btnCol: #f0f8ff;
+    --btnHover: #d2691e;
+    --btnDisableBg: #cccccc;
+    --btnDisableCol: #999999;
+
+}
+
+
+@font-face {
+    font-family: 'raleway-medium';
+    src: url(../fonts/Raleway-Medium.ttf);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: 'raleway-medium';
+    line-height: 1.3;
+    color: var(--font);
+    background-color: var(--body);
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--contain);
+    min-height: 100vh;
+}
+
+.progress {
+    width: 100%;
+    height: 10px;
+    margin-bottom: 10px;
+    background-color: var(--progress);
+}
+
+.progress__inner {
+    height: inherit;
+    width: 30%;
+    background-color: var(--progressInner);
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav button {
+    width: 50%;
+    padding: 15px;
+    font-size: 1.5em;
+    background-color: var(--btnBg);
+    cursor: pointer;
+    color: var(--btnCol);
+}
+
+nav button:hover {
+    background-color: var(--btnHover);
+}
+
+button:disabled,
+button[disabled] {
+    background-color: var(--btnDisableBg);
+    color: var(--btnDisableCol);
+    cursor: not-allowed;
+}
+
+button:disabled:hover,
+button[disabled]:hover {
+    background: var(--btnDisableBg);
+}
+
+.card {
+    position: relative;
+}
+
+.card__question,
+.card__answer {
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+}
+
+.show {
+    opacity: 1;
+}
