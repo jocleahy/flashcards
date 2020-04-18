@@ -56,7 +56,6 @@ p {
 
 .progress__inner {
     height: inherit;
-    width: 30%;
     background-color: var(--progressInner);
 }
 
