@@ -3,6 +3,10 @@ const ele_back = document.querySelector('.card__back');
 
 const btn_all = document.querySelectorAll('nav button');
 const btn_reveal = document.querySelector('.reveal');
+const btn_next = document.querySelector('.next');
+
+let isFront = false;
+let hasCards = true;
 
 
 let data = [
@@ -27,6 +31,7 @@ let numbCards;
 
 
 function init() {
+    btn_all.forEach(btn => btn.addEventListener('click', reveal));
     numbCards = data.length;
     getCard();
 }
@@ -40,18 +45,32 @@ function getCard() {
 
     ele_front.innerHTML = front;
     ele_back.innerHTML = back;
+
+    // remove current card
+    data.splice(r, 1);
+
 }
 
 function reveal() {
+    isFront = !isFront;
+    if (!isFront) getCard()
+    if (data.length == 0 && btn_reveal.disabled) hasCards = false;
     ele_front.classList.toggle('show');
     ele_back.classList.toggle('show');
     toggleBtn();
+    // no more cards!
+    if (!hasCards) endOfCards();
 }
 
 function toggleBtn() {
     btn_all.forEach(btn => btn.disabled ? btn.disabled = false : btn.disabled = true);
 }
 
+function endOfCards() {
+    btn_next.disabled = true;
+}
+
 init();
 
-btn_reveal.addEventListener('click', reveal)
+
+
