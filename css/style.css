@@ -25,7 +25,7 @@
 }
 
 body {
-    font-size: 16px;
+    font-size: 1rem;
     font-family: 'raleway-medium';
     line-height: 1.3;
     color: var(--font);
@@ -37,12 +37,21 @@ h1,
 h2,
 h3,
 h4 {
-    margin-bottom: 10px;
+    margin-bottom: 0.6rem;
     text-transform: capitalize;
 }
 
 p {
-    margin-bottom: 8px;
+    margin-bottom: 0.5rem;
+}
+
+img {
+    display: block;
+    text-align: center;
+    max-width: 100%;
+    height: auto;
+    border: 3px solid var(--btnBorder);
+    margin: 2rem auto;
 }
 
 .container {
@@ -54,7 +63,7 @@ p {
 
 .progress {
     width: 100%;
-    height: 10px;
+    height: 0.6rem;
     background-color: var(--progress);
 }
 
@@ -71,8 +80,8 @@ nav {
 
 nav button {
     width: 50%;
-    padding: 15px;
-    font-size: 1.5em;
+    padding: 1rem;
+    font-size: 1.5rem;
     background-color: var(--btnBg);
     cursor: pointer;
     color: var(--btnCol);
@@ -104,7 +113,8 @@ button[disabled]:hover {
 
 .card__front,
 .card__back {
-    padding: 50px;
+    background-color: var(--contain);
+    padding: 1.6rem;
     position: absolute;
     top: 0;
     opacity: 0;
