@@ -94,8 +94,8 @@ button[disabled]:hover {
     position: relative;
 }
 
-.card__question,
-.card__answer {
+.card__front,
+.card__back {
     padding: 20px;
     position: absolute;
     top: 0;
