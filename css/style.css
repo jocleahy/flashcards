@@ -9,6 +9,8 @@
     --btnHover: #d2691e;
     --btnDisableBg: #cccccc;
     --btnDisableCol: #999999;
+    --overlay: #262626;
+    --loader: #fff000;
 
 }
 
@@ -54,11 +56,108 @@ img {
     margin: 2rem auto;
 }
 
+.overlay {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--overlay);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.circle {
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 150px;
+    height: 150px;
+    border: 3px solid #3c3c3c;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 150px;
+    font-size: 20px;
+    color: var(--loader);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px var(--loader);
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5);
+}
+
+.circle:before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid transparent;
+    border-top: 3px solid var(--loader);
+    border-right: 3px solid var(--loader);
+    border-radius: 50%;
+    animation: outerCircle 2s linear infinite;
+}
+
+.circle span {
+    display: block;
+    position: absolute;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: 50%;
+    height: 4px;
+    background: transparent;
+    transform-origin: left;
+    animation: ball 2s linear infinite;
+}
+
+.circle span:before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--loader);
+    top: -8px;
+    right: -8px;
+    box-shadow: 0 0 20px var(--loader);
+}
+
+
+@keyframes ball {
+    0% {
+        transform: rotate(45deg)
+    }
+
+    100% {
+        transform: rotate(405deg)
+    }
+
+}
+
+@keyframes outerCircle {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+
+}
+
+
+
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
     background-color: var(--contain);
     min-height: 100vh;
+    overflow: hidden;
+    display: none;
 }
 
 .progress {
