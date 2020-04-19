@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="loading" onload="load()">
     <div class="overlay">
         <div class="circle">
             Loading
@@ -36,6 +36,11 @@
     </div>
     <script src="js/prism.js"></script>
     <script type="module" src="js/index.js"></script>
+    <script>
+        function load() {
+            document.querySelector('body').classList.remove('loading')
+        }
+    </script>
 </body>
 
 </html>
